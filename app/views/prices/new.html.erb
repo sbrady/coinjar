@@ -1,0 +1,14 @@
+<h1>Prices</h1>
+
+<%= form_tag("/prices", method: "post") do %>
+  <%= submit_tag("Capture") %>
+<% end %>
+
+<br>
+
+<% @prices.each do |price| %>
+
+  <%= link_to price.name, price_path(price.name) %>:
+  <%= price.price %> <br/>
+
+<% end %>
